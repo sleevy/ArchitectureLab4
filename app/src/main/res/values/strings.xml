@@ -27,4 +27,6 @@
     <string name="s5">S5</string>
     <string name="s0">S0</string>
     <string name="c">C</string>
+    <string name="zero_button">0</string>
+    <string name="one_button">1</string>
 </resources>
