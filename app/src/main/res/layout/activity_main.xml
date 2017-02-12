@@ -1,17 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.cameronrhodes.lab3alu.MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
+    <CheckBox
+        android:text="@string/a4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:id="@+id/chkA4"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkA3"
+        app:layout_constraintTop_toBottomOf="@+id/chkA3"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkA3" />
+
+    <CheckBox
+        android:text="@string/a3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkA3"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkA2"
+        app:layout_constraintTop_toBottomOf="@+id/chkA2"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkA2" />
+
+    <CheckBox
+        android:text="@string/a2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkA2"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkA1"
+        app:layout_constraintTop_toBottomOf="@+id/chkA1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkA1" />
+
+    <CheckBox
+        android:text="@string/a1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkA1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/chkB1"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkA0" />
+
+    <CheckBox
+        android:text="@string/a0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkA0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/chkB0"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <CheckBox
+        android:text="@string/a6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkA6"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkA5"
+        app:layout_constraintTop_toBottomOf="@+id/chkA5"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkA5" />
+
+    <CheckBox
+        android:text="@string/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkB1"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkB2"
+        app:layout_constraintTop_toBottomOf="@+id/chkB0"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkB2" />
+
+    <CheckBox
+        android:text="@string/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkB2"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkB3"
+        app:layout_constraintTop_toBottomOf="@+id/chkB1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkB3" />
+
+    <CheckBox
+        android:text="@string/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkB3"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkB4"
+        app:layout_constraintTop_toBottomOf="@+id/chkB2"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkB4" />
+
+    <CheckBox
+        android:text="@string/b4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkB4"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkB5"
+        app:layout_constraintTop_toBottomOf="@+id/chkB3"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkB5" />
+
+    <CheckBox
+        android:text="@string/b5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkB5"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkB6"
+        app:layout_constraintTop_toBottomOf="@+id/chkB4"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkB6"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <CheckBox
+        android:text="@string/b6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkB6"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkB7"
+        app:layout_constraintTop_toBottomOf="@+id/chkB5"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkB7"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <CheckBox
+        android:text="@string/b7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkB7"
+        tools:layout_editor_absoluteY="294dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/chkA7"
+        app:layout_constraintRight_toLeftOf="@+id/chkS7"
+        app:layout_constraintTop_toBottomOf="@+id/chkB6"
+        android:layout_marginEnd="8dp" />
+
+    <CheckBox
+        android:text="@string/op"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkOp"
+        app:layout_constraintRight_toRightOf="@+id/chkB7"
+        app:layout_constraintLeft_toLeftOf="@+id/chkB7"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/chkB7"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <CheckBox
+        android:text="@string/s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkS2"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkS1"
+        app:layout_constraintTop_toBottomOf="@+id/chkS1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkS1"
+        android:clickable="false" />
+
+    <CheckBox
+        android:text="@string/s3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkS3"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkS2"
+        app:layout_constraintTop_toBottomOf="@+id/chkS2"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkS2"
+        android:clickable="false" />
+
+    <CheckBox
+        android:text="@string/s4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkS4"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkS3"
+        app:layout_constraintTop_toBottomOf="@+id/chkS3"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkS3"
+        android:clickable="false" />
+
+    <CheckBox
+        android:text="@string/s6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkS6"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkS5"
+        app:layout_constraintTop_toBottomOf="@+id/chkS5"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkS5"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:clickable="false" />
+
+    <Button
+        android:text="@string/calculate_button"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCalculate"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <CheckBox
+        android:text="@string/a5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkA5"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkA4"
+        app:layout_constraintTop_toBottomOf="@+id/chkA4"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkA4" />
+
+    <CheckBox
+        android:text="@string/a7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkA7"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkA6"
+        app:layout_constraintTop_toBottomOf="@+id/chkA6"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkA6" />
+
+    <CheckBox
+        android:text="@string/b0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkB0"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/chkS0"
+        app:layout_constraintRight_toRightOf="@+id/chkB1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkB1"
+        app:layout_constraintTop_toTopOf="@+id/chkS0"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:text="@string/s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkS1"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkS0"
+        app:layout_constraintTop_toBottomOf="@+id/chkS0"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkS0"
+        android:clickable="false" />
+
+    <CheckBox
+        android:text="@string/s7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkS7"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkS6"
+        app:layout_constraintTop_toBottomOf="@+id/chkS6"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkS6"
+        android:clickable="false" />
+
+    <CheckBox
+        android:text="@string/s5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkS5"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/chkS4"
+        app:layout_constraintTop_toBottomOf="@+id/chkS4"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/chkS4"
+        android:clickable="false" />
+
+    <CheckBox
+        android:text="@string/s0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkS0"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="90dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="70dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="false" />
+</android.support.constraint.ConstraintLayout>
