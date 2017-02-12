@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int NUM_BITS = 8;
 
+    //can be made local. Keeping in current scope for no particular reason
     private Button calcButton;
     private Button zeroButton;
     private Button oneButton;
@@ -33,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setCheckBoxes(CheckBox[] boxes, boolean val) {
-        for(int i = 0; i < boxes.length; i++) {
-            boxes[i].setChecked(val);
+        for (CheckBox box : boxes) {
+            box.setChecked(val);
         }
     }
 
