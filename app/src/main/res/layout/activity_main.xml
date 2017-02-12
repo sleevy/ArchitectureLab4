@@ -334,7 +334,8 @@
         app:layout_constraintLeft_toLeftOf="@+id/chkS7"
         app:layout_constraintRight_toRightOf="@+id/chkS7"
         app:layout_constraintTop_toBottomOf="@+id/chkS7"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        android:clickable="false" />
 
     <Button
         android:text="0"
@@ -344,14 +345,16 @@
         app:layout_constraintRight_toLeftOf="@+id/btnOne"
         app:layout_constraintTop_toTopOf="@+id/btnOne"
         app:layout_constraintBottom_toBottomOf="@+id/btnOne"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:text="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnOne"
-        android:layout_marginEnd="208dp"
+        android:layout_marginEnd="184dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btnCalculate"
         android:layout_marginBottom="16dp" />
