@@ -1,4 +1,4 @@
-package com.example.cameronrhodes.lab3alu;
+package com.example.cameronrhodes.lab4alu;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         C = (CheckBox) findViewById(R.id.chkCarry);
-        OP = (CheckBox) findViewById(R.id.chkOp);
+        OP = (CheckBox) findViewById(R.id.chkOp0);
 
         calcButton = (Button) findViewById(R.id.btnCalculate);
         calcButton.setOnClickListener(new View.OnClickListener() {

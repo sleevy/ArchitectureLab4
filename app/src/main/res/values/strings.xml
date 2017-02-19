@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lab3ALU</string>
+    <string name="app_name">Lab4ALU</string>
     <string name="calculate_button">Calculate</string>
     <string name="op">OP</string>
     <string name="b7">B7</string>

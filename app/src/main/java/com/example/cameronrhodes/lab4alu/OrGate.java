@@ -1,6 +1,4 @@
-package com.example.cameronrhodes.lab3alu;
-
-import com.example.cameronrhodes.lab3alu.Gate;
+package com.example.cameronrhodes.lab4alu;
 
 public class OrGate extends Gate {
 

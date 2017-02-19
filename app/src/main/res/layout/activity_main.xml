@@ -165,12 +165,11 @@
         android:text="@string/op"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/chkOp"
-        app:layout_constraintRight_toRightOf="@+id/chkB7"
-        app:layout_constraintLeft_toLeftOf="@+id/chkB7"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/chkB7"
-        app:layout_constraintHorizontal_bias="1.0" />
+        android:id="@+id/chkOp0"
+        app:layout_constraintBottom_toBottomOf="@+id/chkOp1"
+        app:layout_constraintTop_toTopOf="@+id/chkOp1"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/chkOp1" />
 
     <CheckBox
         android:text="@string/s2"
@@ -350,24 +349,20 @@
         app:layout_constraintTop_toTopOf="@+id/btnOne"
         app:layout_constraintBottom_toBottomOf="@+id/btnOne"
         app:layout_constraintVertical_bias="0.0"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         android:minWidth="0dip"
-        android:minHeight="0dp" />
+        android:minHeight="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/chkA7" />
 
     <Button
         android:text="@string/one_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnOne"
-        app:layout_constraintTop_toTopOf="parent"
         android:minHeight="1dp"
         android:minWidth="0dp"
-        android:layout_marginTop="352dp"
-        app:layout_constraintRight_toLeftOf="@+id/chkOp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/chkOp" />
+        app:layout_constraintRight_toLeftOf="@+id/chkOp2"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/chkOp2" />
 
     <TextView
         android:text="@string/my_name"
@@ -376,5 +371,22 @@
         android:id="@+id/txtName"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkOp2"
+        app:layout_constraintLeft_toLeftOf="@+id/chkB7"
+        android:layout_marginTop="56dp"
+        app:layout_constraintTop_toBottomOf="@+id/chkB7" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkOp1"
+        app:layout_constraintTop_toTopOf="@+id/chkOp2"
+        app:layout_constraintBottom_toBottomOf="@+id/chkOp2"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/chkOp2" />
 
 </android.support.constraint.ConstraintLayout>

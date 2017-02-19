@@ -1,7 +1,4 @@
-package com.example.cameronrhodes.lab3alu;
-
-import com.example.cameronrhodes.lab3alu.AndGate;
-import com.example.cameronrhodes.lab3alu.NotGate;
+package com.example.cameronrhodes.lab4alu;
 
 public class HalfAdder {
     private AndGate andy, and2;

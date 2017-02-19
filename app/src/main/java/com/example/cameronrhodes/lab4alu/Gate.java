@@ -1,4 +1,4 @@
-package com.example.cameronrhodes.lab3alu;
+package com.example.cameronrhodes.lab4alu;
 
 public abstract class Gate {
     /**

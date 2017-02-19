@@ -1,7 +1,4 @@
-package com.example.cameronrhodes.lab3alu;
-
-import com.example.cameronrhodes.lab3alu.HalfAdder;
-import com.example.cameronrhodes.lab3alu.OrGate;
+package com.example.cameronrhodes.lab4alu;
 
 public class FullAdder {
     private HalfAdder h1, h2;
