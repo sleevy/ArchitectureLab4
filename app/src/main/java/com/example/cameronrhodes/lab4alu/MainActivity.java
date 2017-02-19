@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 public class MainActivity extends AppCompatActivity {
 
     private static final int NUM_BITS = 8;
-
+    private static final int OP_BITS = 3;
     //can be made local. Keeping in current scope for no particular reason
     private Button calcButton;
     private Button zeroButton;
@@ -19,10 +19,12 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox[] B = new CheckBox[NUM_BITS];
     private CheckBox[] S = new CheckBox[NUM_BITS];
     private CheckBox C;
-    private CheckBox OP;
+
+    private CheckBox[] OP = new CheckBox[OP_BITS];
 
     private boolean[] AIn = new boolean[NUM_BITS];
     private boolean[] BIn = new boolean[NUM_BITS];
+    private boolean[] OPIn = new boolean[OP_BITS];
 
     private ALU logicUnit = new ALU(NUM_BITS);
 
@@ -45,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         C = (CheckBox) findViewById(R.id.chkCarry);
-        OP = (CheckBox) findViewById(R.id.chkOp0);
+        OP[0] = (CheckBox) findViewById(R.id.chkOp0);
+        OP[1] = (CheckBox) findViewById(R.id.chkOp1);
+        OP[2] = (CheckBox) findViewById(R.id.chkOp2);
 
         calcButton = (Button) findViewById(R.id.btnCalculate);
         calcButton.setOnClickListener(new View.OnClickListener() {
@@ -55,8 +59,11 @@ public class MainActivity extends AppCompatActivity {
                     AIn[i] = A[i].isChecked();
                     BIn[i] = B[i].isChecked();
                 }
+                for(int i = 0; i < OP_BITS; i++) {
+                    OPIn[i] = OP[i].isChecked();
+                }
 
-                logicUnit.setInputs(AIn,BIn,OP.isChecked());
+                logicUnit.setInputs(AIn,BIn,OPIn);
                 logicUnit.execute();
                 setCheckBoxes(S,logicUnit.getSums());
                 C.setChecked(logicUnit.getOverflow());

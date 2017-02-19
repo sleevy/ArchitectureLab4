@@ -4,9 +4,12 @@ public class ALU {
     private FullAdder[] adders;
     private XOrGate[] opGates;
 
-    private boolean[] sums;
+    private boolean[] S;
 
-    private boolean subtract;
+//    private boolean subtract;
+    private int opBits = 3;
+
+    private boolean[] op = new boolean[opBits];
 
     private boolean overflow;
 
@@ -21,7 +24,7 @@ public class ALU {
         bits = nBits;
         adders = new FullAdder[bits];
         opGates = new XOrGate[bits];
-        sums = new boolean[bits];
+        S = new boolean[bits];
         A = new boolean[bits];
         B = new boolean[bits];
         for (int i = 0; i < bits; i++) {
@@ -30,7 +33,7 @@ public class ALU {
         }
     }
 
-    public void setInputs(boolean[] sA, boolean[] sB, boolean op) {
+    public void setInputs(boolean[] sA, boolean[] sB, boolean[] sOp) {
 //		if(A.length != bits || B.length != bits) {
 //			System.out.println("Error. Length of inputs must be equal to number of bits");
 //			//TODO: set inputs to zero if array not long enough
@@ -49,29 +52,45 @@ public class ALU {
                 B[i] = false;
             }
         }
-        subtract = op;
-
+//        subtract = op;
+        for(int i = 0; i < op.length; i++) {
+            if(i < sOp.length) op[i] = sOp[i];
+            else op[i] = false;
+        }
     }
 
     public void execute() {
 
-
-        for (int i = 0; i < bits; i++) {
-            opGates[i].setInputs(B[i], subtract);
-            opGates[i].execute();
-
-            //DEBUG
-//			opGates[i].print();
-
-            adders[i].setInputs(A[i], opGates[i].getOutput(), (i == 0) ? subtract : adders[i - 1].getCarry());
-            adders[i].execute();
-
-            //DEBUG
-//			adders[i].print();
-
-            sums[i] = adders[i].getSum();
+        if(op[0]) {//1XX
+            if(op[1]) {//11X
+                if(op[2]) { //111
+                    negate();
+                } else { //110
+                    set();
+                }
+            } else { //10
+                if(op[2]) {//101
+                    clear();
+                } else { //100
+                    addSubtract(true);
+                }
+            }
+        } else { //0XX
+            if(op[1]) { //01X
+                if(op[2]) {//011
+                    addSubtract(false);
+                } else {//010
+                    xor();
+                }
+            } else { //00X
+                if(op[2]) {//001
+                    or();
+                } else {//000
+                    and();
+                }
+            }
         }
-        overflow = adders[bits - 1].getCarry();
+
 
 //		int iB = 0;
 //		int iA = 0;
@@ -98,7 +117,7 @@ public class ALU {
 //		if((iB > iA) && subtract) {
 //			overflow = !overflow;
 //			for(int i = 0; i < bits; i++) {
-//				sums[i] = !sums[i];
+//				S[i] = !S[i];
 //			}
 //			
 //		}
@@ -109,16 +128,91 @@ public class ALU {
 //		return sign;
 //	}
 
+    private void and() {
+        AndGate aOp = new AndGate();
+        for(int i = 0; i < bits; i++) {
+            aOp.setInputs(A[i],B[i]);
+            aOp.execute();
+            S[i] = aOp.getOutput();
+        }
+        overflow = false;
+    }
+
+    private void xor() {
+        XOrGate xGate = new XOrGate();
+        for(int i = 0; i < bits; i++) {
+            xGate.setInputs(A[i],B[i]);
+            xGate.execute();
+            S[i] = xGate.getOutput();
+        }
+        overflow = false;
+    }
+
+    private void or() {
+        OrGate oGate = new OrGate();
+        for(int i = 0; i < bits; i++) {
+            oGate.setInputs(A[i],B[i]);
+            oGate.execute();
+            S[i] = oGate.getOutput();
+        }
+        overflow = false;
+    }
+
+    private void clear() {
+        for(int i = 0; i < bits; i++) {
+            A[i] = false;
+            B[i] = false;
+            S[i] = false;
+        }
+        overflow = false;
+    }
+
+    private void set() {
+        for(int i = 0; i < bits; i++) {
+            A[i] = true;
+            B[i] = true;
+            S[i] = true;
+        }
+    }
+
+    private void negate() {
+        for(int i = 0; i < bits; i++) {
+            A[i] = !A[i];
+            B[i] = !B[i];
+            S[i] = !S[i];
+        }
+    }
+
+    private void addSubtract(boolean subtract) {
+        for (int i = 0; i < bits; i++) {
+            opGates[i].setInputs(B[i], subtract);
+            opGates[i].execute();
+
+            //DEBUG
+//			opGates[i].print();
+
+            adders[i].setInputs(A[i], opGates[i].getOutput(), (i == 0) ? subtract : adders[i - 1].getCarry());
+            adders[i].execute();
+
+            //DEBUG
+//			adders[i].print();
+
+            S[i] = adders[i].getSum();
+        }
+        overflow = adders[bits - 1].getCarry();
+    }
+
     public boolean[] getSums() {
-        return sums;
+        return S;
     }
 
     public boolean getOverflow() {
         return overflow;
     }
 
-    public boolean getOp() {
-        return subtract;
+    public boolean[] getOp() {
+//        return subtract;
+        return op;
     }
 
     public void print() {
