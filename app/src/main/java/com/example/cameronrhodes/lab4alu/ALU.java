@@ -61,15 +61,15 @@ public class ALU {
 
     public void execute() {
 
-        if(op[0]) {//1XX
+        if(op[2]) {//1XX
             if(op[1]) {//11X
-                if(op[2]) { //111
+                if(op[0]) { //111
                     negate();
                 } else { //110
                     set();
                 }
             } else { //10
-                if(op[2]) {//101
+                if(op[0]) {//101
                     clear();
                 } else { //100
                     addSubtract(true);
@@ -77,13 +77,13 @@ public class ALU {
             }
         } else { //0XX
             if(op[1]) { //01X
-                if(op[2]) {//011
+                if(op[0]) {//011
                     addSubtract(false);
                 } else {//010
                     xor();
                 }
             } else { //00X
-                if(op[2]) {//001
+                if(op[0]) {//001
                     or();
                 } else {//000
                     and();
