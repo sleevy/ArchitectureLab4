@@ -1,5 +1,7 @@
 package com.example.cameronrhodes.lab4alu;
 
+import java.util.Arrays;
+
 public class ALU {
     private FullAdder[] adders;
     private XOrGate[] opGates;
@@ -19,6 +21,14 @@ public class ALU {
 
 //	private final String NEGATIVE = "-", POSITIVE = "+", ZERO = "";
 //	private String sign = POSITIVE;
+
+    public boolean[] getA() {
+        return Arrays.copyOf(A, bits);
+    }
+
+    public boolean[] getB() {
+        return Arrays.copyOf(B, bits);
+    }
 
     public ALU(int nBits) {
         bits = nBits;

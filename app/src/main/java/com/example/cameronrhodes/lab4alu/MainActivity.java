@@ -67,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 logicUnit.execute();
                 setCheckBoxes(S,logicUnit.getSums());
                 C.setChecked(logicUnit.getOverflow());
+
+                setCheckBoxes(A,logicUnit.getA());
+                setCheckBoxes(B,logicUnit.getB());
+
             }
         });
 
